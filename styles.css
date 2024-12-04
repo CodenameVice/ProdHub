@@ -106,7 +106,7 @@ main {
     top: 20px;
     right: 20px;
     font-size: 30px;
-    color: #FFA500 !important; /* Ensure the color is set to orange with !important */
+    color: #FF6347 !important; /* Ensure the color is set to orange with !important */
     cursor: pointer;
     z-index: 1100;
     transition: color 0.3s, transform 0.2s; /* Smooth color change and scaling */
@@ -114,7 +114,7 @@ main {
 
 /* Optional: Change color on hover */
 .hamburger-menu:hover {
-    color: #FF6347 !important; /* Lighter orange/red when hovering */
+    color: #FFA500 !important; /* Lighter orange/red when hovering */
     transform: scale(1.1); /* Slightly enlarge the button */
 
 /* Body when the sidebar is active */
