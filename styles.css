@@ -41,24 +41,9 @@ header p {
     color: #fff;
 }
 
-/* Top-right social icons */
+/* Remove social icons (from the top right) */
 .top-right-social {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    display: flex;
-    gap: 15px;
-}
-
-.top-right-social a {
-    color: #fff;
-    font-size: 24px;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.top-right-social a:hover {
-    color: #FF6347; /* Match the accent color */
+    display: none;
 }
 
 /* Main content styling */
@@ -108,15 +93,15 @@ ul li a:hover {
 .sidebar {
     position: fixed;
     top: 0;
-    left: -250px; /* Initially hide the sidebar off-screen */
+    right: -250px; /* Initially hide the sidebar off-screen (on the right) */
     width: 250px;
     height: 100%;
     background-color: #333;
     color: #fff;
-    transition: left 0.3s ease; /* Smooth transition */
+    transition: right 0.3s ease; /* Smooth transition */
     z-index: 1000; /* Ensure it's on top */
     padding-top: 60px;
-    padding-right: 10px; /* Fix padding inside the sidebar */
+    padding-left: 10px; /* Fix padding inside the sidebar */
 }
 
 .sidebar a {
@@ -133,7 +118,7 @@ ul li a:hover {
 
 /* Sidebar active class */
 .sidebar.active {
-    left: 0; /* Show the sidebar */
+    right: 0; /* Show the sidebar when active */
 }
 
 /* Hamburger menu button */
@@ -142,9 +127,9 @@ ul li a:hover {
     top: 20px;
     right: 20px;
     font-size: 30px;
-    color: #333;
+    color: #fff; /* Changed the color for visibility */
     cursor: pointer;
-    z-index: 1100; /* Ensure it is clickable */
+    z-index: 1100; /* Ensure it is clickable above the sidebar and content */
 }
 
 /* Body when the sidebar is active */
