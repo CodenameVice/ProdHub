@@ -92,7 +92,9 @@ main {
 }
 
 .sidebar a:hover {
-    background-color: #FF6347;
+    background-color: #444; /* Optional: Darken the background on hover */
+    color: #FF6347; /* Hover color matches the title color (ProdHub color) */
+}
 }
 
 /* Sidebar active class */
