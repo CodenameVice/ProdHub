@@ -120,7 +120,7 @@ body.sidebar-active {
     display: flex;
     flex-wrap: wrap; /* Allow the videos to wrap if necessary */
     justify-content: space-between;
-    gap: 20px; /* Space between the iframes */
+    gap: 10px; /* Space between the iframes */
 }
 
 /* Ensure videos have a fixed size */
