@@ -27,7 +27,7 @@ header {
     background-color: #333; /* Dark background for header */
     color: #fff;
     padding: 20px;
-    border-radius: 8px;
+    border-radius: 0px;
     position: relative;
     overflow: hidden; /* This will prevent the white space showing around the rounded corners */
     margin: 0; /* Ensure no margin causing extra space */
@@ -145,7 +145,7 @@ footer {
     padding: 20px;
     background-color: #333; /* Dark background for footer */
     color: #fff;
-    border-radius: 8px;
+    border-radius: 0px;
     overflow: hidden; /* This will prevent the white space showing around the rounded corners */
     margin: 0; /* Ensure no margin causing extra space */
 }
