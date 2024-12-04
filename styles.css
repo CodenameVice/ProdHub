@@ -56,6 +56,7 @@ main {
     width: 100%;
     gap: 20px;
     padding: 20px;
+    margin-bottom: 120px; /* This should be at least the height of your footer */
 }
 
 /* Category section styling */
@@ -212,20 +213,21 @@ button:hover {
 }
 
 /* Footer styling */
+/* Footer styling */
 footer {
     text-align: center;
     background-color: #333;
     color: #fff;
     padding: 20px; /* Consistent padding */
     min-height: 100px; /* Ensures enough space for footer content */
-    border-radius: 0px;
-    margin: 0 auto; /* Centers the footer horizontally */
     width: 100%; /* Ensures footer spans the full width */
     box-sizing: border-box; /* Includes padding in width/height calculations */
-    flex-shrink: 0; /* Prevents shrinking in a flex container */
-    position: relative;
-    overflow: hidden;
+    position: fixed; /* Fix the footer at the bottom */
+    bottom: 0; /* Always at the bottom of the viewport */
+    left: 0; /* Ensure it spans across the full width */
+    z-index: 1000; /* Keeps the footer on top of other content */
 }
+
 
 /* Footer social links */
 footer .social-links {
