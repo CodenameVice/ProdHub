@@ -22,23 +22,22 @@ body {
     line-height: 1.6;
 }
 
-/* Header styling */
 header {
     text-align: center;
-    background-color: #333; /* Dark background for header */
+    background-color: #333;
     color: #fff;
     padding: 20px; /* Consistent padding */
-    min-height: 150px; /* Ensure header has enough space */
+    min-height: 150px; /* Ensures enough space for header content */
     border-radius: 8px;
-    margin: 0;
-    position: sticky; /* Keeps the header visible at the top */
-    top: 0;
-    z-index: 100;
-    flex-shrink: 0; /* Prevent shrinking in a flex container */
+    margin: 0 auto; /* Centers the header horizontally */
+    width: 100%; /* Ensures header spans the full width */
+    box-sizing: border-box; /* Includes padding in width/height calculations */
+    flex-shrink: 0; /* Prevents shrinking in a flex container */
 }
 
+/* Header text */
 header h1 {
-    font-size: clamp(2rem, 5vw, 3rem); /* Responsive font size */
+    font-size: clamp(2rem, 5vw, 3rem); /* Responsive text sizing */
     color: #FF6347;
     margin-bottom: 10px;
 }
