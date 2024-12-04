@@ -3,119 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ProdHub - Hip-Hop Music & Production Resources</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>ProdHub - Music Production Hub</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
         <h1>ProdHub</h1>
-        <p>Hip-Hop Production Resources</p>
-        <button id="theme-toggle" onclick="toggleTheme()">Switch to Dark Theme</button>
+        <p>Your place for all things music production.</p>
     </header>
 
+    <!-- Theme Toggle Button -->
+    <div id="theme-toggle" class="theme-toggle-btn" onclick="toggleTheme()">🌙</div>
+
     <main>
-        <!-- Royalty-Free Sound Libraries -->
         <div class="category">
-            <h2>Royalty-Free Sound Libraries</h2>
+            <h2>Royalty-Free Music Libraries</h2>
             <ul>
-                <li><a href="https://freesound.org/">Freesound</a></li>
-                <li><a href="https://www.musicradar.com/sampleradar">SampleRadar</a></li>
-                <li><a href="https://www.looperman.com/">Looperman</a></li>
-                <li><a href="https://freemusicarchive.org/">Free Music Archive</a></li>
-                <li><a href="https://splice.com/sounds">Splice Sounds</a></li>
+                <li><a href="https://www.bensound.com" target="_blank">Bensound</a> - Royalty-free music for creators.</li>
+                <li><a href="https://www.free-stock-music.com" target="_blank">Free Stock Music</a> - Free music for commercial use.</li>
+                <li><a href="https://www.jamendo.com/start" target="_blank">Jamendo</a> - A large library of royalty-free music.</li>
             </ul>
         </div>
 
-        <!-- Beat & Instrumental Resources -->
         <div class="category">
-            <h2>Beat & Instrumental Resources</h2>
+            <h2>Beatmaking Software & Tools</h2>
             <ul>
-                <li><a href="https://www.beatstars.com/">BeatStars</a></li>
-                <li><a href="https://www.soundclick.com/">Soundclick</a></li>
-                <li><a href="https://www.rapsbetter.com/">Rapper’s Best Friend</a></li>
+                <li><a href="https://www.ableton.com/en/" target="_blank">Ableton Live</a> - Industry-standard DAW for producers.</li>
+                <li><a href="https://www.fruityloops.com/" target="_blank">FL Studio</a> - Popular DAW for beginners and professionals.</li>
+                <li><a href="https://www.logicpro.app/" target="_blank">Logic Pro X</a> - High-quality DAW for Apple users.</li>
             </ul>
         </div>
 
-        <!-- Royalty-Free Music for YouTube & Other Platforms -->
         <div class="category">
-            <h2>Royalty-Free Music for YouTube & Other Platforms</h2>
+            <h2>VST Plugins</h2>
             <ul>
-                <li><a href="https://www.youtube.com/audiolibrary/music">YouTube Audio Library</a></li>
-                <li><a href="https://incompetech.com/music/royalty-free/">Incompetech</a></li>
+                <li><a href="https://www.spitfireaudio.com" target="_blank">Spitfire Audio</a> - Premium VST plugins for cinematic sounds.</li>
+                <li><a href="https://www.native-instruments.com" target="_blank">Native Instruments</a> - High-quality VST plugins for every genre.</li>
+                <li><a href="https://www.kvraudio.com" target="_blank">KVR Audio</a> - Extensive database of VST plugins.</li>
             </ul>
         </div>
 
-        <!-- VST Plugins and Instruments -->
         <div class="category">
-            <h2>VST Plugins and Instruments</h2>
+            <h2>Hip-Hop Production Tutorials</h2>
             <ul>
-                <li><a href="https://www.native-instruments.com/en/products/komplete/free-instruments/">Native Instruments – Free Kontakt Instruments</a></li>
-                <li><a href="https://tal-software.com/">TAL Software</a></li>
-                <li><a href="https://asb2m10.github.io/dexed/">Dexed</a></li>
-                <li><a href="https://www.spitfireaudio.com/">Spitfire Audio</a></li>
-                <li><a href="https://www.iheartny.com/">I Heart NY</a></li>
+                <li><a href="https://www.youtube.com/channel/UCmSBbuPjZKrpSxSZYqchHxg" target="_blank">Pro Audio Files</a> - In-depth tutorials on hip hop production.</li>
+                <li><a href="https://www.youtube.com/user/therealsonny" target="_blank">Sonny Digital</a> - Tutorials by one of the top producers in hip hop.</li>
+                <li><a href="https://www.musicproductionhq.com" target="_blank">Music Production HQ</a> - Resource for free and paid tutorials.</li>
             </ul>
         </div>
 
-        <!-- Music Production Tutorials & Learning Resources -->
         <div class="category">
-            <h2>Music Production Tutorials & Learning Resources</h2>
+            <h2>Networking Platforms for Producers</h2>
             <ul>
-                <li><a href="https://producelikeapro.com/">Produce Like A Pro</a></li>
-                <li><a href="https://www.pointblankmusicschool.com/">Point Blank Music School</a></li>
-                <li><a href="https://bedroomproducersblog.com/">Bedroom Producers Blog</a></li>
-                <li><a href="https://www.adsrsounds.com/">ADSR Sounds</a></li>
-            </ul>
-        </div>
-
-        <!-- Collaborative Music Platforms -->
-        <div class="category">
-            <h2>Collaborative Music Platforms</h2>
-            <ul>
-                <li><a href="https://www.kompoz.com/">Kompoz</a></li>
-                <li><a href="https://www.bandlab.com/">BandLab</a></li>
-                <li><a href="https://www.auddly.com/">Auddly</a></li>
-            </ul>
-        </div>
-
-        <!-- Royalty-Free Vocals & Acapellas -->
-        <div class="category">
-            <h2>Royalty-Free Vocals & Acapellas</h2>
-            <ul>
-                <li><a href="https://www.acapellas4u.co.uk/">Acapellas4U</a></li>
-                <li><a href="https://www.vocaldownloads.com/">Vocal Downloads</a></li>
-            </ul>
-        </div>
-
-        <!-- Hip-Hop Production Communities -->
-        <div class="category">
-            <h2>Hip-Hop Production Communities</h2>
-            <ul>
-                <li><a href="https://www.reddit.com/r/makinghiphop/">Reddit – r/makinghiphop</a></li>
-                <li><a href="https://www.gearspace.com/board/">Gearslutz (now Gearspace)</a></li>
+                <li><a href="https://www.looperman.com" target="_blank">Looperman</a> - Community of music producers, collaboration hub.</li>
+                <li><a href="https://www.soundcloud.com" target="_blank">SoundCloud</a> - Share and discover music and connect with producers.</li>
+                <li><a href="https://www.beatstars.com" target="_blank">BeatStars</a> - Marketplace for selling beats and collaborating with other producers.</li>
             </ul>
         </div>
     </main>
 
     <footer>
-        <p>© 2024 ProdHub - Curated by SeekTheLooper / VICE</p>
+        <p>Powered by SeekTheLooper</p>
     </footer>
 
-    <script>
-        // Function to toggle themes
-        function toggleTheme() {
-            const body = document.body;
-            const themeButton = document.getElementById("theme-toggle");
-            
-            body.classList.toggle("dark-theme");
-            
-            // Toggle button text
-            if (body.classList.contains("dark-theme")) {
-                themeButton.textContent = "Switch to Light Theme";
-            } else {
-                themeButton.textContent = "Switch to Dark Theme";
-            }
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
