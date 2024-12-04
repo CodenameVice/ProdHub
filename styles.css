@@ -69,6 +69,7 @@ main {
     padding: 20px;
 }
 
+/* Category section styling */
 .category {
     background-color: #fff; /* White background for each section */
     padding: 10px;
@@ -129,16 +130,74 @@ footer .social-links a:hover {
     color: #FF6347; /* Match the accent color */
 }
 
-/* Responsive styling */
+/* Hamburger menu styling */
+.hamburger-menu {
+    font-size: 30px;
+    color: #333;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    cursor: pointer;
+    display: none; /* Hidden by default on large screens */
+}
+
+/* Sidebar styles */
+.sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #333;
+    color: white;
+    overflow-x: hidden;
+    transition: 0.3s;
+    padding-top: 60px;
+    z-index: 1000; /* Ensure it's above content */
+}
+
+.sidebar a {
+    padding: 8px 10px;
+    text-decoration: none;
+    font-size: 20px;
+    color: white;
+    display: block;
+    transition: background-color 0.3s ease;
+}
+
+.sidebar a:hover {
+    background-color: #575757;
+}
+
+/* When sidebar is active, expand it */
+.sidebar.active {
+    width: 250px;
+}
+
+/* Page content adjustment when sidebar is active */
+body.sidebar-active {
+    margin-left: 250px; /* Move content to the right when sidebar opens */
+}
+
+/* Responsive styles */
 @media (max-width: 768px) {
-    header h1 {
-        font-size: 2.5rem;
+    /* Show the hamburger menu on small screens */
+    .hamburger-menu {
+        display: block;
     }
 
-    header p {
-        font-size: 1rem;
+    /* Adjust sidebar to fit small screens */
+    .sidebar {
+        width: 0;
     }
 
+    /* Sidebar link font size and padding */
+    .sidebar a {
+        font-size: 1.5rem;
+        padding: 15px;
+    }
+
+    /* Adjust main content layout */
     main {
         grid-template-columns: 1fr;
     }
