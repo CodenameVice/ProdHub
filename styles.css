@@ -53,10 +53,7 @@ main {
     flex: 1 0 auto;
     overflow: hidden;
     display: flex;
-    flex-wrap: wrap;
     width: 100%;
-    max-width: 1200px;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
     padding: 20px;
 }
