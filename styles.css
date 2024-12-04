@@ -50,7 +50,7 @@ header p {
 
 /* Main content styling */
 main {
-    flex: 1 0 auto;
+    flex: 1;
     overflow: hidden;
     display: flex;
     width: 100%;
@@ -222,7 +222,7 @@ footer {
     min-height: 100px; /* Ensures enough space for footer content */
     width: 100%; /* Ensures footer spans the full width */
     box-sizing: border-box; /* Includes padding in width/height calculations */
-    position: fixed; /* Fix the footer at the bottom */
+    position: relative; /* Fix the footer at the bottom */
     bottom: 0; /* Always at the bottom of the viewport */
     left: 0; /* Ensure it spans across the full width */
     z-index: 1000; /* Keeps the footer on top of other content */
