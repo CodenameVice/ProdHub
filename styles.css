@@ -28,7 +28,7 @@ header {
     background-color: #333; /* Dark background for header */
     color: #fff;
     padding: 20px;
-    border-radius: 0px;
+    border-radius: 8px;
     position: relative;
     overflow: hidden; /* Prevent the white space around rounded corners */
     margin: 0; /* Ensure no margin causing extra space */
