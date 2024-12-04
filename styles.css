@@ -10,6 +10,7 @@ html, body {
     height: 100%;
     display: flex;
     flex-direction: column; /* Stack header, main, footer vertically */
+    position: relative;
 }
 
 /* Body and text styling */
@@ -27,7 +28,7 @@ header {
     color: #fff;
     padding: 20px;
     border-radius: 8px;
-    position: relative; /* For positioning social icons */
+    position: relative;
 }
 
 header h1 {
@@ -69,38 +70,51 @@ main {
     padding: 20px;
 }
 
-/* Category section styling */
-.category {
-    background-color: #fff; /* White background for each section */
+/* Sidebar Styles */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -250px; /* Initially hide the sidebar off-screen */
+    width: 250px;
+    height: 100%;
+    background-color: #333;
+    color: #fff;
+    transition: left 0.3s ease; /* Smooth transition */
+    z-index: 1000; /* Ensure it's on top */
+    padding-top: 60px;
+}
+
+.sidebar a {
+    color: #fff;
+    display: block;
     padding: 10px;
-    border-radius: 6px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    border-left: 5px solid #FF6347; /* Accent color for left border */
-}
-
-.category h2 {
-    font-size: 1.8rem;
-    color: #333;
-    margin-bottom: 10px;
-}
-
-ul {
-    list-style-type: none;
-}
-
-ul li {
-    margin: 8px 0;
-}
-
-ul li a {
     text-decoration: none;
-    color: #0073e6; /* Blue color for links */
-    font-size: 1.1rem;
-    transition: color 0.3s ease;
+    font-size: 1.2rem;
 }
 
-ul li a:hover {
-    color: #005bb5; /* Darker blue on hover */
+.sidebar a:hover {
+    background-color: #444;
+}
+
+/* Sidebar active class */
+.sidebar.active {
+    left: 0; /* Show the sidebar */
+}
+
+/* Hamburger menu button */
+.hamburger-menu {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 30px;
+    color: #333;
+    cursor: pointer;
+    z-index: 1100; /* Ensure it is clickable */
+}
+
+/* Body when the sidebar is active */
+body.sidebar-active {
+    overflow: hidden; /* Prevent scrolling when sidebar is active */
 }
 
 /* Footer styling */
@@ -130,74 +144,16 @@ footer .social-links a:hover {
     color: #FF6347; /* Match the accent color */
 }
 
-/* Hamburger menu styling */
-.hamburger-menu {
-    font-size: 30px;
-    color: #333;
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    cursor: pointer;
-    display: none; /* Hidden by default on large screens */
-}
-
-/* Sidebar styles */
-.sidebar {
-    height: 100%;
-    width: 0;
-    position: fixed;
-    top: 0;
-    left: 0;
-    background-color: #333;
-    color: white;
-    overflow-x: hidden;
-    transition: 0.3s;
-    padding-top: 60px;
-    z-index: 1000; /* Ensure it's above content */
-}
-
-.sidebar a {
-    padding: 8px 10px;
-    text-decoration: none;
-    font-size: 20px;
-    color: white;
-    display: block;
-    transition: background-color 0.3s ease;
-}
-
-.sidebar a:hover {
-    background-color: #575757;
-}
-
-/* When sidebar is active, expand it */
-.sidebar.active {
-    width: 250px;
-}
-
-/* Page content adjustment when sidebar is active */
-body.sidebar-active {
-    margin-left: 250px; /* Move content to the right when sidebar opens */
-}
-
-/* Responsive styles */
+/* Responsive styling */
 @media (max-width: 768px) {
-    /* Show the hamburger menu on small screens */
-    .hamburger-menu {
-        display: block;
+    header h1 {
+        font-size: 2.5rem;
     }
 
-    /* Adjust sidebar to fit small screens */
-    .sidebar {
-        width: 0;
+    header p {
+        font-size: 1rem;
     }
 
-    /* Sidebar link font size and padding */
-    .sidebar a {
-        font-size: 1.5rem;
-        padding: 15px;
-    }
-
-    /* Adjust main content layout */
     main {
         grid-template-columns: 1fr;
     }
