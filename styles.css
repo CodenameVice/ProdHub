@@ -27,22 +27,26 @@ header {
     text-align: center;
     background-color: #333; /* Dark background for header */
     color: #fff;
-    padding: 20px;
+    padding: 20px; /* Consistent padding */
+    min-height: 150px; /* Ensure header has enough space */
     border-radius: 8px;
-    position: relative;
-    overflow: hidden; /* Prevent the white space around rounded corners */
-    margin: 0; /* Ensure no margin causing extra space */
+    margin: 0;
+    position: sticky; /* Keeps the header visible at the top */
+    top: 0;
+    z-index: 100;
+    flex-shrink: 0; /* Prevent shrinking in a flex container */
 }
 
-/* Header h1 and p styling */
 header h1 {
-    font-size: 3rem;
+    font-size: clamp(2rem, 5vw, 3rem); /* Responsive font size */
     color: #FF6347;
+    margin-bottom: 10px;
 }
 
 header p {
     font-size: 1.2rem;
     color: #fff;
+    margin-top: 0;
 }
 
 /* Main content styling */
