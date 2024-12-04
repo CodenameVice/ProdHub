@@ -1,11 +1,14 @@
-/* General Page Styles */
+/* General Styles */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    background-color: #f4f4f4;
+    color: black;
     transition: all 0.3s ease;
 }
 
+/* Header Styles */
 header {
     background-color: #444;
     color: white;
@@ -14,48 +17,25 @@ header {
 }
 
 header h1 {
-    font-size: 3em;
     margin: 0;
 }
 
 header p {
     font-size: 1.2em;
-    margin-top: 10px;
-}
-
-button {
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
-    font-size: 1em;
-    margin-top: 10px;
-}
-
-button:hover {
-    background-color: #45a049;
-}
-
-main {
-    padding: 20px;
-    margin: 0 auto;
-    max-width: 1200px;
 }
 
 /* Category Styles */
 .category {
-    margin-bottom: 30px;
+    margin: 20px;
     padding: 15px;
-    background-color: #ffffff;
+    background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .category h2 {
-    font-size: 1.8em;
-    color: #444;
-    margin-bottom: 15px;
+    color: #333;
+    font-size: 1.5em;
 }
 
 .category ul {
@@ -64,52 +44,17 @@ main {
 }
 
 .category ul li {
-    margin: 8px 0;
+    margin: 10px 0;
 }
 
 .category ul li a {
     text-decoration: none;
-    color: #0066cc;
+    color: #2a75f6;
     font-size: 1.1em;
 }
 
 .category ul li a:hover {
-    text-decoration: underline;
-}
-
-/* Footer Styles */
-footer {
-    background-color: #444;
-    color: white;
-    padding: 10px 0;
-    text-align: center;
-    font-size: 0.9em;
-}
-
-footer p {
-    margin: 0;
-}
-
-/* Light Theme Styles (Default) */
-body {
-    background-color: #f4f4f4;
-    color: black;
-}
-
-body header {
-    background-color: #444;
-}
-
-body .category h2 {
-    color: #444;
-}
-
-body .category ul li a {
-    color: #0066cc;
-}
-
-body .category ul li a:hover {
-    color: #004e99;
+    color: #1d5bbf;
 }
 
 /* Dark Theme Styles */
@@ -124,7 +69,6 @@ body.dark-theme header {
 
 body.dark-theme .category {
     background-color: #1f1f1f;
-    color: white;
 }
 
 body.dark-theme .category h2 {
@@ -139,7 +83,43 @@ body.dark-theme .category ul li a:hover {
     color: #bbd8fc;
 }
 
-/* Transitions */
-body, header, button, .category, footer {
-    transition: all 0.3s ease;
+/* Theme Toggle Button Styles */
+.theme-toggle-btn {
+    position: fixed;
+    top: 20px; /* Change this to `bottom: 20px;` for bottom-right */
+    right: 20px;
+    background-color: #444;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.5em;
+    z-index: 9999; /* Keeps it on top of everything */
+}
+
+.theme-toggle-btn:hover {
+    background-color: #333;
+}
+
+/* Mobile Responsiveness */
+@media only screen and (max-width: 768px) {
+    header h1 {
+        font-size: 2em;
+    }
+
+    .category h2 {
+        font-size: 1.5em;
+    }
+
+    .category ul li a {
+        font-size: 1em;
+    }
+
+    .category ul li {
+        margin: 10px 0;
+    }
+
+    main {
+        padding: 10px;
+    }
 }
