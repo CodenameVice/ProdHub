@@ -52,7 +52,8 @@ header p {
 main {
     flex: 1 0 auto;
     overflow: hidden;
-    display: grid;
+    display: flex;
+    flex-wrap: wrap;
     width: 100%;
     max-width: 1200px;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -115,6 +116,20 @@ main {
 /* Body when the sidebar is active */
 body.sidebar-active {
     overflow: hidden;
+}
+
+/* Video container layout (horizontal) */
+.video-container {
+    display: flex;
+    flex-wrap: wrap; /* Allow the videos to wrap if necessary */
+    justify-content: space-between;
+    gap: 20px; /* Space between the iframes */
+}
+
+/* Ensure videos have a fixed size */
+.video-container iframe {
+    width: 560px; /* Width of the video */
+    height: 315px; /* Height of the video */
 }
 
 /* Footer styling */
