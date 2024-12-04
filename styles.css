@@ -1,106 +1,86 @@
-/* Reset styles for consistency */
-* {
+/* Default light theme styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: black;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-}
-
-/* Body and text styling */
-body {
-    font-family: 'Arial', sans-serif;
-    background-color: #1b1b1b; /* Dark background to mimic the website style */
-    color: #fff;
-    line-height: 1.6;
-    padding: 20px;
+    transition: all 0.3s ease;
 }
 
 header {
+    background-color: #444;
+    color: white;
+    padding: 20px;
     text-align: center;
-    margin-bottom: 30px;
-    background-color: #333; /* Dark background for header */
-    color: #FF6347; /* Accent color for the title */
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
 }
 
-h1 {
-    font-size: 3.5rem;
-    color: #FF6347; /* Tomato color for the title */
-    text-transform: uppercase;
+header h1 {
+    font-size: 2.5em;
 }
 
-p {
-    font-size: 1.2rem;
-    color: #FF6347;
+header p {
+    font-size: 1.2em;
 }
 
-/* Main content styling */
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 1em;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
 main {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-    margin-top: 20px;
-}
-
-.category {
-    background-color: #2a2a2a; /* Dark background for each category */
     padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-    transition: background-color 0.3s ease;
 }
 
 .category h2 {
-    font-size: 1.8rem;
-    color: #FF6347; /* Accent color for section titles */
-    margin-bottom: 15px;
+    color: #444;
 }
 
-ul {
+.category ul {
     list-style-type: none;
+    padding: 0;
 }
 
-ul li {
-    margin: 10px 0;
+.category ul li {
+    margin: 5px 0;
 }
 
-ul li a {
+.category ul li a {
     text-decoration: none;
-    color: #00d9ff; /* Bright cyan for links */
-    font-size: 1.2rem;
-    font-weight: bold;
-    transition: color 0.3s ease, transform 0.3s ease;
+    color: #0066cc;
 }
 
-ul li a:hover {
-    color: #FF6347; /* Change color on hover */
-    transform: scale(1.1);
+.category ul li a:hover {
+    text-decoration: underline;
 }
 
-ul li a:active {
-    color: #ff3333; /* Dark red when clicked */
+/* Dark theme styles */
+body.dark-theme {
+    background-color: #121212;
+    color: white;
 }
 
-/* Footer styling */
-footer {
-    text-align: center;
-    margin-top: 40px;
-    font-size: 1rem;
-    color: #ddd;
-    padding: 20px;
+body.dark-theme header {
     background-color: #333;
-    color: #FF6347;
-    border-radius: 10px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
 }
 
-/* Hover effects for categories */
-.category:hover {
-    background-color: #333; /* Lighter background on hover */
+body.dark-theme .category h2 {
+    color: #bbb;
 }
 
-/* Add a background gradient to the whole page */
-body {
-    background: linear-gradient(135deg, #2f2f2f, #1a1a1a);
+body.dark-theme .category ul li a {
+    color: #8ab6f7;
+}
+
+body.dark-theme .category ul li a:hover {
+    color: #bbd8fc;
 }
