@@ -9,7 +9,7 @@
 html, body {
     height: 100%;
     display: flex;
-    flex-direction: column;
+    flex-direction: column; /* Stack header, main, footer vertically */
 }
 
 /* Body and text styling */
@@ -18,13 +18,11 @@ body {
     background-color: #f0f0f0; /* Light grey background */
     color: #333;
     line-height: 1.6;
-    margin: 0;
 }
 
 /* Header styling */
 header {
     text-align: center;
-    margin-bottom: 30px;
     background-color: #333; /* Dark background for header */
     color: #fff;
     padding: 20px;
@@ -64,10 +62,11 @@ header p {
 
 /* Main content styling */
 main {
+    flex: 1; /* Allows main to expand and push the footer down */
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
-    flex: 1; /* Allows main to expand and push the footer down */
+    padding: 20px;
 }
 
 .category {
