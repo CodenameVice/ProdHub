@@ -120,12 +120,17 @@ body.sidebar-active {
 /* Footer styling */
 footer {
     text-align: center;
-    padding: 20px;
     background-color: #333;
     color: #fff;
+    padding: 20px; /* Consistent padding */
+    min-height: 100px; /* Ensures enough space for footer content */
     border-radius: 0px;
+    margin: 0 auto; /* Centers the footer horizontally */
+    width: 100%; /* Ensures footer spans the full width */
+    box-sizing: border-box; /* Includes padding in width/height calculations */
+    flex-shrink: 0; /* Prevents shrinking in a flex container */
+    position: relative;
     overflow: hidden;
-    margin: 0;
 }
 
 /* Footer social links */
@@ -133,6 +138,7 @@ footer .social-links {
     display: flex;
     justify-content: center;
     gap: 15px;
+    flex-wrap: wrap; /* Allows wrapping on smaller screens */
 }
 
 footer .social-links a {
@@ -206,11 +212,11 @@ footer .social-links a:hover {
     }
 
     footer {
-        padding: 15px;
+        padding: 15px; /* Adjust padding for smaller screens */
     }
 
     footer .social-links a {
-        font-size: 2rem;
+        font-size: 2rem; /* Slightly smaller font size for icons */
     }
 
     .hamburger-menu {
@@ -225,4 +231,3 @@ footer .social-links a:hover {
         width: 100%; /* Make the nav bar take full screen width on mobile */
     }
 }
-
