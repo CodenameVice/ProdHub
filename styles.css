@@ -223,7 +223,7 @@ footer {
     background-color: #333;
     color: #fff;
     padding: 10px 20px; /* Consistent padding */
-    min-height: 60px; /* Ensures enough space for footer content */
+    min-height: 40px; /* Ensures enough space for footer content */
     width: 100%; /* Ensures footer spans the full width */
     box-sizing: border-box; /* Includes padding in width/height calculations */
     position: relative; /* Fix the footer at the bottom */
