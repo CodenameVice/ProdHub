@@ -29,7 +29,7 @@ header {
     padding: 20px;
     border-radius: 0px;
     position: relative;
-    overflow: hidden; /* This will prevent the white space showing around the rounded corners */
+    overflow: hidden; /* Prevent the white space around rounded corners */
     margin: 0; /* Ensure no margin causing extra space */
 }
 
@@ -129,9 +129,9 @@ ul li a:hover {
     top: 20px;
     right: 20px;
     font-size: 30px;
-    color: #fff; /* Changed the color for visibility */
+    color: #fff; /* Button color for visibility */
     cursor: pointer;
-    z-index: 1100; /* Ensure it is clickable above the sidebar and content */
+    z-index: 1100; /* Ensure it's clickable above the sidebar and content */
 }
 
 /* Body when the sidebar is active */
@@ -146,7 +146,7 @@ footer {
     background-color: #333; /* Dark background for footer */
     color: #fff;
     border-radius: 0px;
-    overflow: hidden; /* This will prevent the white space showing around the rounded corners */
+    overflow: hidden; /* Prevent the white space around rounded corners */
     margin: 0; /* Ensure no margin causing extra space */
 }
 
@@ -168,17 +168,77 @@ footer .social-links a:hover {
     color: #FF6347; /* Match the accent color */
 }
 
+/* Mobile Menu Styling */
+#nav-bar {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 250px;
+    background-color: #333;
+    z-index: 999;
+    padding: 50px 20px;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
+}
+
+#nav-bar.open {
+    display: block;
+}
+
+#nav-bar a {
+    color: #fff;
+    display: block;
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    text-decoration: none;
+}
+
+#nav-bar a:hover {
+    color: #FF6347;
+}
+
+/* Close button for mobile navigation */
+#close-menu {
+    color: #fff;
+    font-size: 2rem;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+}
+
 /* Responsive styling */
 @media (max-width: 768px) {
     header h1 {
-        font-size: 2.5rem;
+        font-size: 2.5rem; /* Smaller font size for header title */
     }
 
     header p {
-        font-size: 1rem;
+        font-size: 1rem; /* Smaller font size for header subtitle */
     }
 
     main {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr; /* Stack content vertically */
+        padding: 10px;
+    }
+
+    .category {
+        padding: 15px;
+    }
+
+    footer {
+        padding: 15px;
+    }
+
+    footer .social-links a {
+        font-size: 2rem; /* Bigger icons for footer */
+    }
+
+    /* Adjust hamburger button for mobile */
+    .hamburger-menu {
+        font-size: 30px; /* Hamburger button size */
+        right: 15px;
+        top: 15px;
     }
 }
