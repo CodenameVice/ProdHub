@@ -30,6 +30,7 @@ header {
     border-radius: 8px;
     position: relative;
     overflow: hidden; /* This will prevent the white space showing around the rounded corners */
+    margin: 0; /* Ensure no margin causing extra space */
 }
 
 header h1 {
@@ -146,6 +147,7 @@ footer {
     color: #fff;
     border-radius: 8px;
     overflow: hidden; /* This will prevent the white space showing around the rounded corners */
+    margin: 0; /* Ensure no margin causing extra space */
 }
 
 /* Footer social links */
