@@ -236,20 +236,19 @@
 
     <script src="script.js"></script> <!-- Your JavaScript file -->
 
-   <!-- Chat box button -->
-<div class="chat-button" onclick="toggleChatBox()">💬 Leave Feedback</div>
-
-<!-- Chat box popup -->
-<div class="chat-box" id="chat-box">
-    <div class="chat-header">
-        <h3>Suggestions Box</h3>
-        <span class="close-chat" onclick="toggleChatBox()">×</span>
-    </div>
-    <form id="feedback-form" action="send-feedback.php" method="POST">
-        <textarea id="feedback" name="feedback" placeholder="Write your suggestions and feedback here..." rows="4" required></textarea>
-        <button type="submit">Submit</button>
-    </form>
-</div>
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/6750a2974304e3196aec7d6c/1ie9fm8hl';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
     
 </body>
 </html>
