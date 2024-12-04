@@ -11,6 +11,7 @@ html, body {
     display: flex;
     flex-direction: column; /* Stack header, main, footer vertically */
     position: relative;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
 /* Body and text styling */
@@ -33,9 +34,10 @@ header {
     margin: 0; /* Ensure no margin causing extra space */
 }
 
+/* Header h1 and p styling */
 header h1 {
     font-size: 3rem;
-    color: #FF6347; /* Tomato color for the title */
+    color: #FF6347;
 }
 
 header p {
@@ -43,67 +45,37 @@ header p {
     color: #fff;
 }
 
-/* Remove social icons (from the top right) */
-.top-right-social {
-    display: none;
-}
-
 /* Main content styling */
 main {
-    flex: 1; /* Allows main to expand and push the footer down */
+    flex: 1;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
     padding: 20px;
 }
 
-/* Category section styling (padding and white background) */
+/* Category section styling */
 .category {
-    background-color: #fff; /* White background for each section */
-    padding: 20px; /* Add padding to maintain space around content */
+    background-color: #fff;
+    padding: 20px;
     border-radius: 6px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    border-left: 5px solid #FF6347; /* Accent color for left border */
-}
-
-.category h2 {
-    font-size: 1.8rem;
-    color: #333;
-    margin-bottom: 10px;
-}
-
-ul {
-    list-style-type: none;
-}
-
-ul li {
-    margin: 8px 0;
-}
-
-ul li a {
-    text-decoration: none;
-    color: #0073e6; /* Blue color for links */
-    font-size: 1.1rem;
-    transition: color 0.3s ease;
-}
-
-ul li a:hover {
-    color: #005bb5; /* Darker blue on hover */
+    border-left: 5px solid #FF6347;
 }
 
 /* Sidebar Styles */
 .sidebar {
     position: fixed;
     top: 0;
-    right: -250px; /* Initially hide the sidebar off-screen (on the right) */
+    right: -250px;
     width: 250px;
     height: 100%;
     background-color: #333;
     color: #fff;
-    transition: right 0.3s ease; /* Smooth transition */
-    z-index: 1000; /* Ensure it's on top */
+    transition: right 0.3s ease;
+    z-index: 1000;
     padding-top: 60px;
-    padding-left: 10px; /* Fix padding inside the sidebar */
+    padding-left: 10px;
 }
 
 .sidebar a {
@@ -120,7 +92,7 @@ ul li a:hover {
 
 /* Sidebar active class */
 .sidebar.active {
-    right: 0; /* Show the sidebar when active */
+    right: 0;
 }
 
 /* Hamburger menu button */
@@ -129,25 +101,25 @@ ul li a:hover {
     top: 20px;
     right: 20px;
     font-size: 30px;
-    color: #fff; /* Button color for visibility */
+    color: #fff;
     cursor: pointer;
-    z-index: 1100; /* Ensure it's clickable above the sidebar and content */
+    z-index: 1100;
 }
 
 /* Body when the sidebar is active */
 body.sidebar-active {
-    overflow: hidden; /* Prevent scrolling when sidebar is active */
+    overflow: hidden;
 }
 
 /* Footer styling */
 footer {
     text-align: center;
     padding: 20px;
-    background-color: #333; /* Dark background for footer */
+    background-color: #333;
     color: #fff;
     border-radius: 0px;
-    overflow: hidden; /* Prevent the white space around rounded corners */
-    margin: 0; /* Ensure no margin causing extra space */
+    overflow: hidden;
+    margin: 0;
 }
 
 /* Footer social links */
@@ -165,7 +137,7 @@ footer .social-links a {
 }
 
 footer .social-links a:hover {
-    color: #FF6347; /* Match the accent color */
+    color: #FF6347;
 }
 
 /* Mobile Menu Styling */
@@ -211,15 +183,15 @@ footer .social-links a:hover {
 /* Responsive styling */
 @media (max-width: 768px) {
     header h1 {
-        font-size: 2.5rem; /* Smaller font size for header title */
+        font-size: 2.5rem;
     }
 
     header p {
-        font-size: 1rem; /* Smaller font size for header subtitle */
+        font-size: 1rem;
     }
 
     main {
-        grid-template-columns: 1fr; /* Stack content vertically */
+        grid-template-columns: 1fr;
         padding: 10px;
     }
 
@@ -232,13 +204,19 @@ footer .social-links a:hover {
     }
 
     footer .social-links a {
-        font-size: 2rem; /* Bigger icons for footer */
+        font-size: 2rem;
     }
 
-    /* Adjust hamburger button for mobile */
     .hamburger-menu {
-        font-size: 30px; /* Hamburger button size */
-        right: 15px;
-        top: 15px;
+        font-size: 30px;
+        right: 20px;
+        top: 20px;
+        z-index: 1200; /* Ensure the button is on top of other elements */
+    }
+
+    /* Ensure the mobile navigation bar works on smaller screens */
+    #nav-bar {
+        width: 100%; /* Make the nav bar take full screen width on mobile */
     }
 }
+
