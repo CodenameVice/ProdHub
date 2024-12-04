@@ -27,7 +27,7 @@ header {
     color: #fff;
     padding: 20px; /* Consistent padding */
     min-height: 150px; /* Ensures enough space for header content */
-    border-radius: 8px;
+    border-radius: 0px;
     margin: 0 auto; /* Centers the header horizontally */
     width: 100%; /* Ensures header spans the full width */
     box-sizing: border-box; /* Includes padding in width/height calculations */
