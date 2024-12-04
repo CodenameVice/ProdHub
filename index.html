@@ -271,6 +271,25 @@ s0.parentNode.insertBefore(s1,s0);
 })();
 </script>
 <!--End of Tawk.to Script-->
+
+<script>
+        // JavaScript to make footer sticky when at the bottom of the page
+        window.addEventListener('scroll', function() {
+            const footer = document.querySelector('footer');
+            const footerHeight = footer.offsetHeight;
+            const scrollPosition = window.scrollY + window.innerHeight;
+            const documentHeight = document.documentElement.scrollHeight;
+
+            // If the scroll position reaches the bottom of the page, fix the footer at the bottom
+            if (scrollPosition >= documentHeight - footerHeight) {
+                footer.style.position = 'fixed';
+                footer.style.bottom = '0';
+            } else {
+                footer.style.position = 'relative';
+                footer.style.bottom = 'auto';
+            }
+        });
+    </script>
     
 </body>
 </html>
