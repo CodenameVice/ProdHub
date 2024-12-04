@@ -109,11 +109,13 @@ main {
     color: #FFA500;
     cursor: pointer;
     z-index: 1100;
+    transition: color 0.3s, transform 0.2s; /* Smooth color change and scaling */
 }
 
 /* Optional: Change color on hover */
 .hamburger-menu:hover {
     color: #FF6347; /* Lighter orange/red when hovering (can be customized) */
+    transform: scale(1.1); /* Slightly enlarge the button */
 
 /* Body when the sidebar is active */
 body.sidebar-active {
