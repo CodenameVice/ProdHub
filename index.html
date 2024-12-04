@@ -235,5 +235,21 @@
     </script>
 
     <script src="script.js"></script> <!-- Your JavaScript file -->
+
+    <!-- Chat box button -->
+<div class="chat-button" onclick="toggleChatBox()">💬 Leave Feedback</div>
+
+<!-- Chat box popup -->
+<div class="chat-box" id="chat-box">
+    <div class="chat-header">
+        <h3>Suggestion Box</h3>
+        <span class="close-chat" onclick="toggleChatBox()">×</span>
+    </div>
+    <form id="feedback-form">
+        <textarea id="feedback" placeholder="Write your suggestions and feedback here..." rows="4" required></textarea>
+        <button type="submit">Submit</button>
+    </form>
+</div>
+    
 </body>
 </html>
