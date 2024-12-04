@@ -86,7 +86,7 @@ body.dark-theme .category ul li a:hover {
 /* Theme Toggle Button Styles */
 .theme-toggle-btn {
     position: fixed;
-    top: 20px; /* Change this to `bottom: 20px;` for bottom-right */
+    top: 20px;
     right: 20px;
     background-color: #444;
     color: white;
