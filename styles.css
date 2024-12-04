@@ -10,7 +10,6 @@ html, body {
     height: 100%;
     display: flex;
     flex-direction: column; /* Stack header, main, footer vertically */
-    position: relative;
     overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
@@ -33,6 +32,7 @@ header {
     width: 100%; /* Ensures header spans the full width */
     box-sizing: border-box; /* Includes padding in width/height calculations */
     flex-shrink: 0; /* Prevents shrinking in a flex container */
+    position: relative;
 }
 
 /* Header text */
@@ -50,8 +50,11 @@ header p {
 
 /* Main content styling */
 main {
-    flex: 1;
-    display: grid;
+    flex: 1 0 auto;
+    overflow: hidden;
+    display: block;
+    width: 100%;
+    max-width: 1200px;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
     padding: 20px;
