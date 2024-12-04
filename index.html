@@ -5,15 +5,113 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>ProdHub - Your Hip-Hop Production Hub</title>
+    <!-- External CSS -->
     <link rel="stylesheet" href="styles.css">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        section.category {
+            margin-bottom: 30px;
+        }
+
+        section.category h2 {
+            color: #333;
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 5px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        ul li {
+            margin: 10px 0;
+        }
+
+        ul li a {
+            text-decoration: none;
+            color: #0073e6;
+        }
+
+        ul li a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        /* Social Media Links - Footer */
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 10px 0;
+        }
+
+        .social-links a {
+            color: #fff;
+            font-size: 24px;
+            text-decoration: none;
+        }
+
+        .social-links a:hover {
+            color: #ff0000; /* Hover Effect */
+        }
+
+        /* Top-Right Social Links */
+        .top-right-social {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            display: flex;
+            gap: 15px;
+        }
+
+        .top-right-social a {
+            color: #333;
+            font-size: 24px;
+        }
+
+        .top-right-social a:hover {
+            color: #ff0000; /* Hover Effect */
+        }
+    </style>
 </head>
 <body>
     <header>
+        <div class="top-right-social">
+            <a href="https://www.instagram.com/yourhandle" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.youtube.com/yourchannel" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+        </div>
         <h1>ProdHub</h1>
         <p>Your one-stop aggregator for hip-hop production resources, created by SeekTheLooper / codenameVICE</p>
     </header>
     
     <main>
+        <!-- Drum Kits Section -->
         <section class="category">
             <h2>Drum Kits</h2>
             <ul>
@@ -26,10 +124,10 @@
                 <li><a href="https://hiphopdrumsamples.com/" target="_blank">Hiphopdrumsamples.com</a></li>
                 <li><a href="https://splice.com/" target="_blank">Splice</a></li>
                 <li><a href="https://freedrumkits.net/" target="_blank">freedrumkits.net</a></li>
-                
             </ul>
         </section>
 
+        <!-- VST Plugins Section -->
         <section class="category">
             <h2>VST Plugins</h2>
             <ul>
@@ -44,84 +142,18 @@
                 <li><a href="https://www.tone2.com/" target="_blank">Tone2</a></li>
                 <li><a href="https://www.deviousmachines.com/" target="_blank">Devious Machines</a></li>
                 <li><a href="https://www.audiopluginsforfree.com/" target="_blank">Audio Plugins for Free</a></li>
-
-                <!-- Paid Plugins -->
-                <li><a href="https://www.izotope.com/" target="_blank">iZotope</a></li>
-                <li><a href="https://www.sweetwater.com/" target="_blank">Sweetwater</a></li>
-                <li><a href="https://www.pluginalliance.com/" target="_blank">Plugin Alliance</a></li>
-                <li><a href="https://www.arturia.com/" target="_blank">Arturia</a></li>
-                <li><a href="https://www.uvi.net/" target="_blank">UVI</a></li>
-                <li><a href="https://www.ableton.com/" target="_blank">Ableton</a></li>
-                <li><a href="https://www.fabfilter.com/" target="_blank">FabFilter</a></li>
-                <li><a href="https://www.valhalladsp.com/" target="_blank">Valhalla DSP</a></li>
-                <li><a href="https://www.korg.com/" target="_blank">Korg</a></li>
-                <li><a href="https://www.spectrasonics.net/" target="_blank">Spectrasonics</a></li>
-                <li><a href="https://www.soundtoys.com/" target="_blank">Soundtoys</a></li>
-                <li><a href="https://www.fxpansion.com/" target="_blank">FXpansion</a></li>
-                <li><a href="https://www.cytomic.com/" target="_blank">Cytomic</a></li>
             </ul>
         </section>
 
-        <section class="category">
-            <h2>Beat Marketplaces</h2>
-            <ul>
-                <li><a href="https://www.beatstars.com/" target="_blank">BeatStars</a></li>
-                <li><a href="https://traktrain.com/" target="_blank">Traktrain</a></li>
-                <li><a href="https://airbit.com/" target="_blank">Airbit</a></li>
-                <li><a href="https://www.freebeats.io/" target="_blank">FreeBeats.io</a></li>
-                <li><a href="https://www.soundclick.com/" target="_blank">SoundClick</a></li>
-                <li><a href="https://www.producerspot.com/" target="_blank">ProducerSpot</a></li>
-                <li><a href="https://bandcamp.com/" target="_blank">Bandcamp</a></li>
-                <li><a href="https://www.tracklib.com/" target="_blank">Tracklib</a></li>
-                <li><a href="https://www.myflashstore.net/" target="_blank">MyFlashStore</a></li>
-                <li><a href="https://audiomack.com/" target="_blank">Audiomack</a></li>
-                <li><a href="https://www.beatopia.com/" target="_blank">Beatopia</a></li>
-                <li><a href="https://www.thedrumbroker.com/" target="_blank">The Drum Broker</a></li>
-                <li><a href="https://www.reverbnation.com/" target="_blank">ReverbNation</a></li>
-                <li><a href="https://www.loopmasters.com/" target="_blank">Loopmasters</a></li>
-            </ul>
-        </section>
-
-        <section class="category">
-            <h2>Youtube Channels</h2>
-            <ul>
-                <li><a href="https://www.youtube.com/@yousuckatproducing" target="_blank">Yousuckatproducing</a></li>
-                <li><a href="https://www.youtube.com/@ProduceLikeAPro_" target="_blank">Produce Like A Pro</a></li>
-                <li><a href="https://www.youtube.com/@sonicacademy" target="_blank">Sonic Academy</a></li>
-                <li><a href="https://www.youtube.com/@ADSRSounds" target="_blank">ADSR Sounds</a></li>
-                <li><a href="https://www.youtube.com/@busyworksbeats" target="_blank">Busy Works Beats</a></li>
-                <li><a href="https://www.youtube.com/@cymaticsfm" target="_blank">Cymatics.fm</a></li>
-                <li><a href="https://www.youtube.com/@MasterYourCraft" target="_blank">Master Your Craft</a></li>
-                <li><a href="https://www.youtube.com/@TheProducersPlug" target="_blank">The Producer’s Plug</a></li>
-                <li><a href="https://www.youtube.com/@yoyoquinn" target="_blank">YoYo Quinn</a></li>
-                <li><a href="https://www.youtube.com/@SimplySonic" target="_blank">Simply Sonic</a></li>
-                <li><a href="https://www.youtube.com/@HelpMeDevvon" target="_blank">Help Me Devvon</a></li>
-                <li><a href="https://www.youtube.com/@NavieD" target="_blank">Navie D</a></li>
-                <li><a href="https://www.youtube.com/@boyarmira" target="_blank">Nick Mira</a></li>
-                <li><a href="https://www.youtube.com/@InternetMoneyTutorials" target="_blank">Internet Money</a></li>
-                <li><a href="https://www.youtube.com/@busyworksbeats" target="_blank">Busy Works Beats</a></li>
-                <li><a href="https://www.youtube.com/@EdTalenti" target="_blank">Ed Talenti</a></li>
-                <li><a href="https://www.youtube.com/@LANDRmusic" target="_blank">LANDR Music</a></li>
-                <li><a href="https://www.youtube.com/@robtmb" target="_blank">robtmb</a></li>
-                <li><a href="https://www.youtube.com/channel/UCZudn0zxAhycrmJYU-68VQw" target="_blank">shonci</a></li>
-                <li><a href="https://www.youtube.com/@Taetro" target="_blank">TAETRO</a></li>
-                <li><a href="https://www.youtube.com/@KyleBeats_" target="_blank">Kyle Beats</a></li>
-                <li><a href="https://www.youtube.com/@ShawnCeeLIVE" target="_blank">ShawnCeeLIVE</li>
-                <li><a href="https://www.youtube.com/@TheCompanyMan" target="_blank">The Company Man</li>
-                <li><a href="https://www.youtube.com/@synthet7" target="_blank">Synthet</li>
-                <li><a href="https://www.youtube.com/@andrewhuang" target="_blank">Andrew Huang</li>
-                <li><a href="https://www.youtube.com/@inthemix" target="_blank">In The Mix</li>
-                <li><a href="https://www.youtube.com/@LarryOhh" target="_blank">Larry Ohh</li>
-                <li><a href="https://www.youtube.com/@pitchfork" target="_blank">Pitchfork</li>
-                <li><a href="https://www.youtube.com/@AlexRome" target="_blank">Alex Rome</li>
-                
-                
-            </ul>
-        </section>
+        <!-- Add other sections here -->
     </main>
 
     <footer>
         <p>Created by SeekTheLooper / codenameVICE. All rights reserved.</p>
+        <div class="social-links">
+            <a href="https://www.instagram.com/yourhandle" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.youtube.com/yourchannel" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+        </div>
     </footer>
 </body>
 </html>
