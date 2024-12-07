@@ -1,5 +1,6 @@
 // Function to toggle the sidebar
 function toggleNav() {
+    console.log('Sidebar toggle clicked'); // Debugging line
     const sidebar = document.getElementById('sidebar');
     sidebar.classList.toggle('active');
 }
