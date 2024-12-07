@@ -72,15 +72,16 @@ main {
 .sidebar {
     position: fixed;
     top: 0;
-    right: -250px;
+    right: -250px; /* Hidden off-screen initially */
     width: 250px;
     height: 100%;
     background-color: #333;
     color: #fff;
-    transition: right 0.3s ease;
+    transition: right 0.3s ease; /* Smooth slide-in effect */
     z-index: 1000;
     padding-top: 60px;
     padding-left: 10px;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1); /* Add shadow for better appearance */
 }
 
 .sidebar a {
@@ -97,7 +98,7 @@ main {
 
 /* Sidebar active class */
 .sidebar.active {
-    right: 0;
+    right: 0; /* Slide into view */
 }
 
 /* Hamburger menu button */
@@ -108,12 +109,12 @@ main {
     font-size: 30px;
     color: #fff;
     cursor: pointer;
-    z-index: 1100;
+    z-index: 1100; /* Ensure it is above other content */
 }
 
 /* Body when the sidebar is active */
 body.sidebar-active {
-    overflow: hidden;
+    overflow: hidden; /* Prevent scrolling when sidebar is active */
 }
 
 /* Footer styling */
