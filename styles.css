@@ -211,6 +211,34 @@ footer .social-links a:hover {
     background-color: #e5573e;
 }
 
+/* Ensures that videos stay inside the container with padding */
+.video-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Adds space between videos */
+    justify-content: center; /* Centers the videos within the container */
+    padding: 20px; /* Ensures there is padding around the videos */
+}
+
+.video-container iframe {
+    max-width: 100%; /* Ensures the iframe doesn't overflow the container */
+    width: 100%;
+    height: auto;
+    border-radius: 8px; /* Optional: adds rounded corners to the iframes */
+    box-sizing: border-box; /* Ensures padding and borders are included in the element's width/height */
+    margin-bottom: 20px; /* Adds space at the bottom of each iframe */
+}
+
+h2, h3 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Ensures the overall layout respects the padding */
+section.category {
+    padding: 20px;
+}
+
 /* Responsive styling */
 @media (max-width: 768px) {
     header h1 {
