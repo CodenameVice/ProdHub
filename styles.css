@@ -211,22 +211,26 @@ footer .social-links a:hover {
     background-color: #e5573e;
 }
 
-/* Ensures that videos stay inside the container with padding */
+/* Ensures that the video container respects padding */
 .video-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px; /* Adds space between videos */
-    justify-content: center; /* Centers the videos within the container */
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Create a flexible grid for the videos */
+    gap: 20px; /* Adds space between the videos */
     padding: 20px; /* Ensures there is padding around the videos */
 }
 
 .video-container iframe {
-    max-width: 100%; /* Ensures the iframe doesn't overflow the container */
-    width: 100%;
-    height: auto;
-    border-radius: 8px; /* Optional: adds rounded corners to the iframes */
-    box-sizing: border-box; /* Ensures padding and borders are included in the element's width/height */
-    margin-bottom: 20px; /* Adds space at the bottom of each iframe */
+    width: 100%; /* Ensures the iframe fits within its container */
+    height: 315px; /* Fixed height to match YouTube aspect ratio */
+    max-width: 100%; /* Ensures the iframe doesn't extend beyond the container */
+    border-radius: 8px; /* Optional: adds rounded corners to the iframe */
+    box-sizing: border-box; /* Ensures padding and borders are included in width/height */
+}
+
+/* Optional: Adjust category section if needed */
+section.category {
+    padding: 20px;
+    margin-bottom: 20px;
 }
 
 h2, h3 {
@@ -234,10 +238,6 @@ h2, h3 {
     margin-bottom: 20px;
 }
 
-/* Ensures the overall layout respects the padding */
-section.category {
-    padding: 20px;
-}
 
 /* Responsive styling */
 @media (max-width: 768px) {
