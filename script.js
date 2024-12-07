@@ -10,16 +10,6 @@ function toggleChatBox() {
     chatBox.style.display = (chatBox.style.display === 'block') ? 'none' : 'block';
 }
 
-// Add event listener for DOMContentLoaded to ensure elements are ready
-document.addEventListener('DOMContentLoaded', () => {
-    const menu = document.querySelector('.hamburger-menu');
-    const feedbackForm = document.getElementById('feedback-form');
-
-    // Ensure the hamburger menu exists before adding a listener
-    if (menu) {
-        menu.addEventListener('click', toggleNav);
-    }
-
     // Handle form submission
     if (feedbackForm) {
         feedbackForm.addEventListener('submit', function (e) {
