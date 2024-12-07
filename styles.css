@@ -79,11 +79,12 @@ main {
     color: #fff;
     transition: right 0.3s ease; /* Smooth slide-in effect */
     z-index: 1000;
-    padding-top: 60px;
+    padding-top: 60px; /* Position links below the header */
     padding-left: 10px;
     box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1); /* Add shadow for better appearance */
 }
 
+/* Sidebar links styling */
 .sidebar a {
     color: #fff;
     display: block;
