@@ -1,11 +1,7 @@
 // Function to toggle the sidebar
 function toggleNav() {
     const sidebar = document.getElementById('sidebar');
-    const body = document.body;
-
-    // Toggle 'active' class on the sidebar and body
     sidebar.classList.toggle('active');
-    body.classList.toggle('sidebar-active');
 }
 
 // Toggle chat box visibility
