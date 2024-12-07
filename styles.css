@@ -10,6 +10,7 @@ html, body {
     height: 100%;
     display: flex;
     flex-direction: column; /* Stack header, main, footer vertically */
+    position: relative;
     overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
@@ -21,42 +22,36 @@ body {
     line-height: 1.6;
 }
 
+/* Header styling */
 header {
     text-align: center;
-    background-color: #333;
+    background-color: #333; /* Dark background for header */
     color: #fff;
-    padding: 20px; /* Consistent padding */
-    min-height: 150px; /* Ensures enough space for header content */
+    padding: 20px;
     border-radius: 0px;
-    margin: 0 auto; /* Centers the header horizontally */
-    width: 100%; /* Ensures header spans the full width */
-    box-sizing: border-box; /* Includes padding in width/height calculations */
-    flex-shrink: 0; /* Prevents shrinking in a flex container */
     position: relative;
+    overflow: hidden; /* Prevent the white space around rounded corners */
+    margin: 0; /* Ensure no margin causing extra space */
 }
 
-/* Header text */
+/* Header h1 and p styling */
 header h1 {
-    font-size: clamp(2rem, 5vw, 3rem); /* Responsive text sizing */
+    font-size: 3rem;
     color: #FF6347;
-    margin-bottom: 10px;
 }
 
 header p {
     font-size: 1.2rem;
     color: #fff;
-    margin-top: 0;
 }
 
 /* Main content styling */
 main {
     flex: 1;
-    overflow: hidden;
-    display: flex;
-    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
     padding: 20px;
-    margin-bottom: 120px; /* This should be at least the height of your footer */
 }
 
 /* Category section styling */
@@ -92,9 +87,7 @@ main {
 }
 
 .sidebar a:hover {
-    background-color: #444; /* Optional: Darken the background on hover */
-    color: #FF6347; /* Hover color matches the title color (ProdHub color) */
-}
+    background-color: #444;
 }
 
 /* Sidebar active class */
@@ -108,141 +101,32 @@ main {
     top: 20px;
     right: 20px;
     font-size: 30px;
-    color: #FF6347 !important; /* Ensure the color is set to orange with !important */
+    color: #fff;
     cursor: pointer;
     z-index: 1100;
-    transition: color 0.3s, transform 0.2s; /* Smooth color change and scaling */
 }
-
-/* Optional: Change color on hover */
-.hamburger-menu:hover {
-    color: #FFA500 !important; /* Lighter orange/red when hovering */
-    transform: scale(1.1); /* Slightly enlarge the button */
 
 /* Body when the sidebar is active */
 body.sidebar-active {
     overflow: hidden;
 }
 
-/* Video container layout (horizontal) */
-.video-container {
-    display: flex;
-    flex-wrap: wrap; /* Allow the videos to wrap if necessary */
-    justify-content: space-between;
-    gap: 10px; /* Space between the iframes */
-}
-
-/* Ensure videos have a fixed size */
-.video-container iframe {
-    width: 560px; /* Width of the video */
-    height: 315px; /* Height of the video */
-}
-
-/* Chat button styling */
-.chat-button {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: #FF6347;
-    color: #fff;
-    font-size: 20px;
-    padding: 15px;
-    border-radius: 50%;
-    cursor: pointer;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    z-index: 1001;
-}
-
-.chat-button:hover {
-    background-color: #e55347;
-}
-
-/* Chat box styling */
-.chat-box {
-    position: fixed;
-    bottom: 100px;
-    right: 20px;
-    background-color: #fff;
-    border-radius: 10px;
-    width: 300px;
-    padding: 20px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    display: none; /* Initially hidden */
-    z-index: 1000;
-}
-
-.chat-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.chat-header h3 {
-    font-size: 18px;
-    color: #333;
-    margin: 0;
-}
-
-.close-chat {
-    font-size: 20px;
-    color: #FF6347;
-    cursor: pointer;
-}
-
-.close-chat:hover {
-    color: #e55347;
-}
-
-/* Feedback textarea */
-#feedback {
-    width: 100%;
-    padding: 10px;
-    margin-top: 10px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    font-size: 14px;
-    resize: vertical;
-}
-
-/* Submit button */
-button {
-    width: 100%;
-    padding: 10px;
-    background-color: #FF6347;
-    color: #fff;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    margin-top: 10px;
-}
-
-button:hover {
-    background-color: #e55347;
-}
-
-/* Footer styling */
 /* Footer styling */
 footer {
     text-align: center;
+    padding: 20px;
     background-color: #333;
     color: #fff;
-    padding: 10px 20px; /* Consistent padding */
-    min-height: 40px; /* Ensures enough space for footer content */
-    width: 100%; /* Ensures footer spans the full width */
-    box-sizing: border-box; /* Includes padding in width/height calculations */
-    position: relative; /* Fix the footer at the bottom */
-    bottom: 0; /* Always at the bottom of the viewport */
-    left: 0; /* Ensure it spans across the full width */
-    z-index: 1000; /* Keeps the footer on top of other content */
+    border-radius: 0px;
+    overflow: hidden;
+    margin: 0;
 }
-
 
 /* Footer social links */
 footer .social-links {
     display: flex;
     justify-content: center;
     gap: 15px;
-    flex-wrap: wrap; /* Allows wrapping on smaller screens */
 }
 
 footer .social-links a {
@@ -316,11 +200,11 @@ footer .social-links a:hover {
     }
 
     footer {
-        padding: 15px; /* Adjust padding for smaller screens */
+        padding: 15px;
     }
 
     footer .social-links a {
-        font-size: 2rem; /* Slightly smaller font size for icons */
+        font-size: 2rem;
     }
 
     .hamburger-menu {
@@ -335,3 +219,4 @@ footer .social-links a:hover {
         width: 100%; /* Make the nav bar take full screen width on mobile */
     }
 }
+
