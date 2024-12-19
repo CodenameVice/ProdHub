@@ -48,7 +48,7 @@ if (bpmFinder) {
 
         if (file) {
             console.log('File uploaded:', file);
-            processBPM(file); // Function to process BPM
+            processBPM(file); 
         } else {
             alert('Please upload a valid audio file.');
         }
@@ -56,19 +56,17 @@ if (bpmFinder) {
 
     function processBPM(file) {
         console.log('Processing BPM...');
-        // Use audio context or processing library
         const reader = new FileReader();
 
         reader.onload = function(event) {
             const audioData = event.target.result;
-            // Process the audio data and calculate BPM
-            // Example logic or integration with audio processing libraries
-            // Update UI with calculated BPM
+            // Placeholder for BPM calculation logic
+            const bpm = 120; // Replace with actual BPM calculation logic
             console.log('BPM calculated:', bpm);
             document.getElementById('bpmOutput').textContent = `BPM: ${bpm}`;
         };
 
-        reader.readAsArrayBuffer(file); // Reading the audio file
+        reader.readAsArrayBuffer(file); 
     }
 } else {
     console.error('BPM Finder not found!');
