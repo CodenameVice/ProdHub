@@ -81,11 +81,12 @@ if (audioUploadInput) {
             const audioData = event.target.result;
 
             // Use the beat-detect library to process the audio data
-            beatDetect(audioData).then(bpm => {
+            try {
+                const bpm = await beatDetect(audioData);
                 bpmOutput.textContent = `BPM: ${bpm}`;
-            }).catch(err => {
+            } catch (err) {
                 console.error('Error detecting BPM:', err);
-            });
+            }
         };
 
         reader.readAsArrayBuffer(file); 
