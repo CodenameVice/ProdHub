@@ -239,9 +239,9 @@ footer .social-links a:hover {
 .bpm-finder {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center; /* Center align the BPM finder */
     color: white;
-    margin-left: 20px;
+    margin: 0 auto;
 }
 
 .bpm-title {
