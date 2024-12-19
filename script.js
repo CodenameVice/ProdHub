@@ -59,3 +59,37 @@ if (tapBPMButton) {
 } else {
     console.error('Tap BPM button not found!');
 }
+
+// Handle audio file upload and BPM detection
+const audioUploadInput = document.getElementById('audioUpload'); 
+
+if (audioUploadInput) {
+    audioUploadInput.addEventListener('change', function (e) {
+        const file = audioUploadInput.files[0];
+
+        if (file && (file.type === 'audio/mpeg' || file.type === 'audio/wav')) {
+            processBPM(file);
+        } else {
+            alert('Please upload a valid MP3 or WAV audio file.');
+        }
+    });
+
+    function processBPM(file) {
+        const reader = new FileReader();
+
+        reader.onload = async function(event) {
+            const audioData = event.target.result;
+
+            // Use the beat-detect library to process the audio data
+        beatDetect(audioData).then(bpm => {
+            bpmOutput.textContent = `BPM: ${bpm}`;
+        }).catch(err => {
+            console.error('Error detecting BPM:', err);
+        });
+    };
+
+        reader.readAsArrayBuffer(file); 
+    }
+} else {
+    console.error('Audio upload input not found!');
+}
