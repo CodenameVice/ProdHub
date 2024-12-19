@@ -19,7 +19,7 @@ function toggleChatBox() {
 }
 
 // Handle form submission
-const feedbackForm = document.getElementById('feedback-form'); 
+const feedbackForm = document.querySelector('#feedback-form'); 
 if (feedbackForm) {
     feedbackForm.addEventListener('submit', function (e) {
         e.preventDefault(); 
