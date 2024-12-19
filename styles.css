@@ -227,6 +227,52 @@ footer .social-links a:hover {
     box-sizing: border-box; /* Ensures padding and borders are included in width/height */
 }
 
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+}
+
+.bpm-finder {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    color: white;
+    margin-left: 20px;
+}
+
+.bpm-title {
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.bpm-finder input[type="file"],
+.bpm-finder button {
+    margin: 5px 0;
+    background-color: #0073e6;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.bpm-finder button:hover {
+    background-color: #005bb5;
+}
+
+#bpmOutput {
+    font-size: 14px;
+    margin-top: 5px;
+    font-weight: bold;
+    color: #ffcc00;
+}
+
+
 /* Optional: Adjust category section if needed */
 section.category {
     padding: 20px;
