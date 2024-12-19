@@ -18,28 +18,44 @@ function toggleChatBox() {
     }
 }
 
-// BPM Finder functionality (Tap BPM)
-const bpmFinder = document.querySelector('.bpm-finder'); // Using .bpm-finder class
+// Handle form submission
+const feedbackForm = document.querySelector('#feedback-form'); 
+if (feedbackForm) {
+    feedbackForm.addEventListener('submit', function (e) {
+        e.preventDefault(); 
+        const feedback = document.getElementById('feedback').value;
 
-if (bpmFinder) {
-    const tapBPMButton = bpmFinder.querySelector('#tapBPM'); // Use ID
-    let tapTimes = [];
-    let bpm = 0;
-
-    tapBPMButton.addEventListener('click', function () {
-        const now = Date.now();
-
-        // Record tap time
-        tapTimes.push(now);
-
-        // Ensure there are at least 2 taps to calculate BPM
-        if (tapTimes.length >= 2) {
-            const interval = (tapTimes[tapTimes.length - 1] - tapTimes[tapTimes.length - 2]) / 1000; // in seconds
-            bpm = 60 / interval; // BPM calculation: 60 / interval
-            bpm = Math.round(bpm); // Round BPM to nearest whole number
-            document.getElementById('bpmOutput').textContent = `BPM: ${bpm}`;
+        if (feedback) {
+            alert('Thank you for your feedback!'); 
+            document.getElementById('feedback').value = ''; 
+            toggleChatBox(); 
+        } else {
+            alert('Please provide some feedback before submitting!');
         }
     });
 } else {
-    console.error('BPM Finder not found!');
+    console.error('Feedback form not found!');
+}
+
+// BPM Finder functionality
+const tapBPMButton = document.getElementById('tapBPM'); 
+
+if (tapBPMButton) {
+    let tapTimestamps = [];
+    let tapBPM = 0;
+    let bpmOutput = document.getElementById('bpmOutput');
+
+    tapBPMButton.addEventListener('click', function () {
+        const currentTime = Date.now();
+        tapTimestamps.push(currentTime);
+
+        // Calculate BPM if we have at least two taps
+        if (tapTimestamps.length >= 2) {
+            const timeDiff = tapTimestamps[tapTimestamps.length - 1] - tapTimestamps[tapTimestamps.length - 2];
+            tapBPM = Math.round(60000 / timeDiff); // Convert ms to BPM
+            bpmOutput.textContent = `BPM: ${tapBPM}`;
+        }
+    });
+} else {
+    console.error('Tap BPM button not found!');
 }
