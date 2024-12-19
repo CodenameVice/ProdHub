@@ -39,11 +39,11 @@ if (feedbackForm) {
 
 // BPM Finder functionality
 const tapBPMButton = document.getElementById('tapBPM'); 
+const bpmOutput = document.getElementById('bpmOutput');
 
 if (tapBPMButton) {
     let tapTimestamps = [];
     let tapBPM = 0;
-    let bpmOutput = document.getElementById('bpmOutput');
 
     tapBPMButton.addEventListener('click', function () {
         const currentTime = Date.now();
@@ -81,12 +81,12 @@ if (audioUploadInput) {
             const audioData = event.target.result;
 
             // Use the beat-detect library to process the audio data
-        beatDetect(audioData).then(bpm => {
-            bpmOutput.textContent = `BPM: ${bpm}`;
-        }).catch(err => {
-            console.error('Error detecting BPM:', err);
-        });
-    };
+            beatDetect(audioData).then(bpm => {
+                bpmOutput.textContent = `BPM: ${bpm}`;
+            }).catch(err => {
+                console.error('Error detecting BPM:', err);
+            });
+        };
 
         reader.readAsArrayBuffer(file); 
     }
