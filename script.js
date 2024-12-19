@@ -19,14 +19,14 @@ function toggleChatBox() {
 }
 
 // BPM Finder functionality (Tap BPM)
-const bpmFinder = document.getElementById('bpm-finder'); 
-if (bpmFinder) {
-    const bpmButton = bpmFinder.querySelector('button');
+const bpmFinder = document.querySelector('.bpm-finder'); // Using .bpm-finder class
 
+if (bpmFinder) {
+    const tapBPMButton = bpmFinder.querySelector('#tapBPM'); // Use ID
     let tapTimes = [];
     let bpm = 0;
 
-    bpmButton.addEventListener('click', function () {
+    tapBPMButton.addEventListener('click', function () {
         const now = Date.now();
 
         // Record tap time
