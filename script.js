@@ -1,3 +1,6 @@
+import beatDetect from 'beat-detect';
+
+
 // Function to toggle the sidebar
 function toggleNav() {
     const sidebar = document.getElementById('sidebar');
