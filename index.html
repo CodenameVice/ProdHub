@@ -1,45 +1,272 @@
-// Function to toggle the sidebar
-function toggleNav() {
-    const sidebar = document.getElementById('sidebar');
-    if (sidebar) {
-        sidebar.classList.toggle('active');
-    } else {
-        console.error('Sidebar element not found!');
-    }
-}
-
-// Toggle chat box visibility
-function toggleChatBox() {
-    const chatBox = document.getElementById('chat-box');
-    if (chatBox) {
-        chatBox.style.display = (chatBox.style.display === 'block') ? 'none' : 'block';
-    } else {
-        console.error('Chat box not found!');
-    }
-}
-
-// BPM Finder functionality (Tap BPM)
-const bpmFinder = document.querySelector('.bpm-finder'); // Using .bpm-finder class
-
-if (bpmFinder) {
-    const tapBPMButton = bpmFinder.querySelector('#tapBPM'); // Use ID
-    let tapTimes = [];
-    let bpm = 0;
-
-    tapBPMButton.addEventListener('click', function () {
-        const now = Date.now();
-
-        // Record tap time
-        tapTimes.push(now);
-
-        // Ensure there are at least 2 taps to calculate BPM
-        if (tapTimes.length >= 2) {
-            const interval = (tapTimes[tapTimes.length - 1] - tapTimes[tapTimes.length - 2]) / 1000; // in seconds
-            bpm = 60 / interval; // BPM calculation: 60 / interval
-            bpm = Math.round(bpm); // Round BPM to nearest whole number
-            document.getElementById('bpmOutput').textContent = `BPM: ${bpm}`;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta property="og:title" content="ProdHub" /> <!-- The title shown in the preview -->
+    <meta property="og:description" content="Explore and learn about all things Hip-Hop." /> <!-- Description -->
+    <meta property="og:image" content="https://github.com/CodenameVice/ProdHub/blob/main/thumbnail.png" /> <!-- Image shown in the preview -->
+    <meta property="og:url" content="https://codenamevice.github.io/prodhub/" /> <!-- The URL to the page -->
+    <meta property="og:type" content="hip-hop aggregator"  /> <!-- Type of content (can be 'website', 'article', etc.) -->
+    <title>ProdHub - Your Hip-Hop Production Hub</title>
+    <!-- External CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
         }
-    });
-} else {
-    console.error('BPM Finder not found!');
-}
+
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        main {
+            padding: 10px;
+        }
+
+        section.category {
+            margin-bottom: 20px;
+        }
+
+        section.category h2 {
+            color: #333;
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 5px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        ul li {
+            margin: 10px 0;
+        }
+
+        ul li a {
+            text-decoration: none;
+            color: #0073e6;
+        }
+
+        ul li a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        /* Social Media Links - Footer */
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 10px 0;
+        }
+
+        .social-links a {
+            color: #fff;
+            font-size: 24px;
+            text-decoration: none;
+        }
+
+        .social-links a:hover {
+            color: #ff0000; /* Hover Effect */
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Hamburger menu icon -->
+   <div class="hamburger-menu" onclick="toggleNav()">&#9776;</div> <!-- Hamburger button -->
+
+    <!-- Sidebar -->
+    <div class="nav-bar" id="sidebar">
+        <a href="index.html">Home</a>
+        <a href="tutorials.html">YouTube Tutorials</a>
+    </div>
+    
+    <header>
+        <h1>ProdHub</h1>
+        <div class="bpm-finder">
+            <p class="bpm-title">BPM Finder</p>
+            <input type="file" id="audioUpload" accept="audio/*" title="Upload an MP3 or WAV file to find its BPM">
+            <button id="findBPM">Find BPM</button>
+            <button id="tapBPM">Tap BPM</button>
+            <p id="bpmOutput">Hover & Tap to Detect</p>
+        </div>
+    </header>
+    
+    <main>
+        <!-- Drum Kits Section -->
+        <section class="category">
+            <h2>Drum Kits</h2>
+            <ul>
+                <li><a href="https://www.reddit.com/r/Drumkits/" target="_blank">Reddit ~ /r/Drumkits</a></li>
+                <li><a href="https://cymatics.fm/collections/freebies" target="_blank">Cymatics freebies</a></li>
+                <li><a href="https://producergrind.com/collections/free-packs" target="_blank">ProducerGrind - Free Packs</a></li>
+                <li><a href="https://relooped.de/collections/free-downloads" target="_blank">Relooped - Free Downloads</a></li>
+                <li><a href="https://producergrind.com/collections/drum-kits" target="_blank">ProducerGrind</a></li>
+                <li><a href="https://cymatics.fm/collections/drum-kits" target="_blank">Cymatics</a></li>
+                <li><a href="https://hiphopdrumsamples.com/" target="_blank">Hiphopdrumsamples.com</a></li>
+                <li><a href="https://splice.com/" target="_blank">Splice</a></li>
+                <li><a href="https://freedrumkits.net/" target="_blank">freedrumkits.net</a></li>
+            </ul>
+        </section>
+
+        <!-- VST Plugins Section -->
+        <section class="category">
+            <h2>VST Plugins</h2>
+            <ul>
+                <!-- Free Plugins -->
+                <li><a href="https://www.pluginboutique.com/" target="_blank">Plugin Boutique</a></li>
+                <li><a href="https://www.vst4free.com/" target="_blank">VST4Free</a></li>
+                <li><a href="https://www.native-instruments.com/" target="_blank">Native Instruments</a></li>
+                <li><a href="https://www.kvraudio.com/" target="_blank">KVR Audio</a></li>
+                <li><a href="https://bedroomproducersblog.com/" target="_blank">Bedroom Producers Blog</a></li>
+                <li><a href="https://www.spitfireaudio.com/" target="_blank">Spitfire Audio</a></li>
+                <li><a href="https://www.bluecataudio.com/" target="_blank">Blue Cat Audio</a></li>
+                <li><a href="https://www.tone2.com/" target="_blank">Tone2</a></li>
+                <li><a href="https://www.deviousmachines.com/" target="_blank">Devious Machines</a></li>
+                <li><a href="https://www.audiopluginsforfree.com/" target="_blank">Audio Plugins for Free</a></li>
+            </ul>
+        </section>
+        <section class="category">
+            <h2>Beat Marketplaces</h2>
+            <ul>
+                <li><a href="https://www.beatstars.com/" target="_blank">BeatStars</a></li>
+                <li><a href="https://traktrain.com/" target="_blank">Traktrain</a></li>
+                <li><a href="https://airbit.com/" target="_blank">Airbit</a></li>
+                <li><a href="https://www.freebeats.io/" target="_blank">FreeBeats.io</a></li>
+                <li><a href="https://www.soundclick.com/" target="_blank">SoundClick</a></li>
+                <li><a href="https://www.producerspot.com/" target="_blank">ProducerSpot</a></li>
+                <li><a href="https://bandcamp.com/" target="_blank">Bandcamp</a></li>
+                <li><a href="https://www.tracklib.com/" target="_blank">Tracklib</a></li>
+                <li><a href="https://www.myflashstore.net/" target="_blank">MyFlashStore</a></li>
+                <li><a href="https://audiomack.com/" target="_blank">Audiomack</a></li>
+                <li><a href="https://www.beatopia.com/" target="_blank">Beatopia</a></li>
+                <li><a href="https://www.thedrumbroker.com/" target="_blank">The Drum Broker</a></li>
+                <li><a href="https://www.reverbnation.com/" target="_blank">ReverbNation</a></li>
+                <li><a href="https://www.loopmasters.com/" target="_blank">Loopmasters</a></li>
+            </ul>
+        </section>
+
+        <section class="category">
+            <h2>Youtube Channels</h2>
+            <ul>
+                <li><a href="https://www.youtube.com/@yousuckatproducing" target="_blank">Yousuckatproducing</a></li>
+                <li><a href="https://www.youtube.com/@ProduceLikeAPro_" target="_blank">Produce Like A Pro</a></li>
+                <li><a href="https://www.youtube.com/@sonicacademy" target="_blank">Sonic Academy</a></li>
+                <li><a href="https://www.youtube.com/@ADSRSounds" target="_blank">ADSR Sounds</a></li>
+                <li><a href="https://www.youtube.com/@busyworksbeats" target="_blank">Busy Works Beats</a></li>
+                <li><a href="https://www.youtube.com/@cymaticsfm" target="_blank">Cymatics.fm</a></li>
+                <li><a href="https://www.youtube.com/@MasterYourCraft" target="_blank">Master Your Craft</a></li>
+                <li><a href="https://www.youtube.com/@TheProducersPlug" target="_blank">The Producer’s Plug</a></li>
+                <li><a href="https://www.youtube.com/@yoyoquinn" target="_blank">YoYo Quinn</a></li>
+                <li><a href="https://www.youtube.com/@SimplySonic" target="_blank">Simply Sonic</a></li>
+                <li><a href="https://www.youtube.com/@HelpMeDevvon" target="_blank">Help Me Devvon</a></li>
+                <li><a href="https://www.youtube.com/@NavieD" target="_blank">Navie D</a></li>
+                <li><a href="https://www.youtube.com/@boyarmira" target="_blank">Nick Mira</a></li>
+                <li><a href="https://www.youtube.com/@InternetMoneyTutorials" target="_blank">Internet Money</a></li>
+                               
+                
+            </ul>
+        </section>
+
+        <section class="category">
+            <h2>Youtube Channels</h2>
+            <ul>
+                <li><a href="https://www.youtube.com/@busyworksbeats" target="_blank">Busy Works Beats</a></li>
+                <li><a href="https://www.youtube.com/@EdTalenti" target="_blank">Ed Talenti</a></li>
+                <li><a href="https://www.youtube.com/@LANDRmusic" target="_blank">LANDR Music</a></li>
+                <li><a href="https://www.youtube.com/@robtmb" target="_blank">robtmb</a></li>
+                <li><a href="https://www.youtube.com/channel/UCZudn0zxAhycrmJYU-68VQw" target="_blank">shonci</a></li>
+                <li><a href="https://www.youtube.com/@Taetro" target="_blank">TAETRO</a></li>
+                <li><a href="https://www.youtube.com/@KyleBeats_" target="_blank">Kyle Beats</a></li>
+                <li><a href="https://www.youtube.com/@ShawnCeeLIVE" target="_blank">ShawnCeeLIVE</a></li>
+                <li><a href="https://www.youtube.com/@TheCompanyMan" target="_blank">The Company Man</a></li>
+                <li><a href="https://www.youtube.com/@synthet7" target="_blank">Synthet</a></li>
+                <li><a href="https://www.youtube.com/@andrewhuang" target="_blank">Andrew Huang</a></li>
+                <li><a href="https://www.youtube.com/@inthemix" target="_blank">In The Mix</a></li>
+                <li><a href="https://www.youtube.com/@LarryOhh" target="_blank">Larry Ohh</a></li>
+                <li><a href="https://www.youtube.com/@pitchfork" target="_blank">Pitchfork</a></li>
+                <li><a href="https://www.youtube.com/@AlexRome" target="_blank">Alex Rome</a></li>
+                                
+            </ul>
+        </section>
+
+        <section class="category">
+            <h2>News Outlets</h2>
+            <ul>
+                <li><a href="https://www.complex.com/pigeons-and-planes" target="_blank">Complex - Pigeons & Planes</a></li>
+                <li><a href="https://www.passionweiss.com/" target="_blank">Passionweiss</a></li>
+                <li><a href="https://nobells.blog/" target="_blank">No Bells</a></li>
+                <li><a href="https://www.cabbageshiphop.com/" target="_blank">CABBAGES</a></li>
+                <li><a href="https://rawsidehiphop.com/" target="_blank">Raw Side Hop Hop</a></li>
+                <li><a href="https://www.albumoftheyear.org/" target="_blank">Album Of The Year (AOTY)</a></li>
+                <li><a href="https://hiphopdx.com/" target="_blank">Hip Hop DX</a></li>
+                <li><a href="https://www.hotnewhiphop.com/" target="_blank">Hot New Hip Hop (hnhh)</a></li>
+                <li><a href="https://allhiphop.com/" target="_blank">All HipHop</a></li>
+                <li><a href="https://www.tmz.com/hip-hop/" target="_blank">TMZ Hip-Hop</a></li>
+                
+            </ul>
+        </section>
+
+
+    </main>
+
+    <footer>
+        <p>Created by SeekTheLooper / codenameVICE. All rights reserved.</p>
+        <div class="social-links">
+            <a href="https://www.instagram.com/seekthelooper" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.youtube.com/@seekthelooper" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+        </div>
+    </footer>
+
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/6750a2974304e3196aec7d6c/1ie9fm8hl';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+
+<script>
+        // JavaScript to make footer sticky when at the bottom of the page
+        window.addEventListener('scroll', function() {
+            const footer = document.querySelector('footer');
+            const footerHeight = footer.offsetHeight;
+            const scrollPosition = window.scrollY + window.innerHeight;
+            const documentHeight = document.documentElement.scrollHeight;
+
+            // If the scroll position reaches the bottom of the page, fix the footer at the bottom
+            if (scrollPosition >= documentHeight - footerHeight) {
+                footer.style.position = 'fixed';
+                footer.style.bottom = '0';
+            } else {
+                footer.style.position = 'relative';
+                footer.style.bottom = 'auto';
+            }
+        });
+    </script>
+<script src="script.js"></script> <!-- Your JavaScript file -->    
+</body>
+</html>
