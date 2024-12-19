@@ -18,56 +18,28 @@ function toggleChatBox() {
     }
 }
 
-// Handle form submission
-const feedbackForm = document.querySelector('#feedback-form'); 
-if (feedbackForm) {
-    feedbackForm.addEventListener('submit', function (e) {
-        e.preventDefault(); 
-        const feedback = document.getElementById('feedback').value;
-
-        if (feedback) {
-            alert('Thank you for your feedback!'); 
-            document.getElementById('feedback').value = ''; 
-            toggleChatBox(); 
-        } else {
-            alert('Please provide some feedback before submitting!');
-        }
-    });
-} else {
-    console.error('Feedback form not found!');
-}
-
-// BPM Finder functionality
+// BPM Finder functionality (Tap BPM)
 const bpmFinder = document.getElementById('bpm-finder'); 
 if (bpmFinder) {
-    const fileInput = bpmFinder.querySelector('input[type="file"]');
     const bpmButton = bpmFinder.querySelector('button');
 
-    bpmButton.addEventListener('click', function () {
-        const file = fileInput.files[0];
+    let tapTimes = [];
+    let bpm = 0;
 
-        if (file) {
-            console.log('File uploaded:', file);
-            processBPM(file); 
-        } else {
-            alert('Please upload a valid audio file.');
+    bpmButton.addEventListener('click', function () {
+        const now = Date.now();
+
+        // Record tap time
+        tapTimes.push(now);
+
+        // Ensure there are at least 2 taps to calculate BPM
+        if (tapTimes.length >= 2) {
+            const interval = (tapTimes[tapTimes.length - 1] - tapTimes[tapTimes.length - 2]) / 1000; // in seconds
+            bpm = 60 / interval; // BPM calculation: 60 / interval
+            bpm = Math.round(bpm); // Round BPM to nearest whole number
+            document.getElementById('bpmOutput').textContent = `BPM: ${bpm}`;
         }
     });
-
-    function processBPM(file) {
-        console.log('Processing BPM...');
-        const reader = new FileReader();
-
-        reader.onload = function(event) {
-            const audioData = event.target.result;
-            // Placeholder for BPM calculation logic
-            const bpm = 120; // Replace with actual BPM calculation logic
-            console.log('BPM calculated:', bpm);
-            document.getElementById('bpmOutput').textContent = `BPM: ${bpm}`;
-        };
-
-        reader.readAsArrayBuffer(file); 
-    }
 } else {
     console.error('BPM Finder not found!');
 }
